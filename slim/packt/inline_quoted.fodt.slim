@@ -1,0 +1,22 @@
+- case @type
+- when :strong
+  text:span text:style-name="Key_20_Word_20_5b_PACKT_5d_"
+    =text
+- when :monospaced
+  text:span text:style-name="Code_20_In_20_Text_20_5b_PACKT_5d_"
+    =text
+- when :emphasis
+  text:span text:style-name="Italics_20_5b_PACKT_5d_"
+    =text
+- else
+  - if role == "pages-total"
+    text:page-count Обновите все поля
+  - elsif role == "small"
+    text:span text:style-name="Screen_20_Text_Small_20_5b_PACKT_5d_"
+      =text
+  - elsif !role.nil? and !role.empty? and role.include? "psize-130"
+    text:span text:style-name="Screen_Size130_Text_Center_20_5b_PACKT_5d_"
+      =text
+  - else
+    text:span text:style-name="Screen_20_Text_20_5b_PACKT_5d_"
+      =text
